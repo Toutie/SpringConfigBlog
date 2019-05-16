@@ -90,7 +90,7 @@ public class RootConfig {
             Resource[] resource = context.getResources("classpath:mapper/*.xml");
             sqlSessionFactoryBean.setMapperLocations(resource);
             sqlSessionFactoryBean.setTypeAliasesPackage("com.bean");
-            
+            sqlSessionFactoryBean.setPlugins(pageInterceptor());
         }catch (Exception e){
             e.printStackTrace();
         }
